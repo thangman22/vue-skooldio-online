@@ -5,6 +5,10 @@
         {{todo.text | capitalize}}
       </li>
     </ul>
+    <p>
+      {{text}}
+    </p>
+    <input type="text" v-model="text">
   </div>
 </template>
 
@@ -12,13 +16,14 @@
 
 export default {
   name: 'app',
-  filters: {
-    capitalize (val) {
-      return val.toUpperCase()
+  methods: {
+    save (val) {
+      console.log('save')
     }
   },
   data() {
     return {
+      text: '',
       color:'red',
       srcUrl: 'https://via.placeholder.com/20',
       todos:[
