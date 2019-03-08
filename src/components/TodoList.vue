@@ -14,6 +14,9 @@ export default {
             //default: [],
             default: function (val) {
                 return '.' + val
+            },
+            validator: function (params) {
+                retunr ['a'].includes(val)
             }
         }
     }
