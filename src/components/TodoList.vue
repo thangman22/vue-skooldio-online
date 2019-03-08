@@ -8,6 +8,11 @@
 export default {
     name: 'TodoList',
     // props: ['todoItems']
+    props: {
+        todoItems: {
+            type: Array
+        }
+    }
 }
 </script>
 
