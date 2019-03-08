@@ -1,51 +1,15 @@
 <template>
   <div id="app">
-    <ul>
-      <li v-for="todo in todos" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}" :style="{color:color}">
-        {{todo.text | capitalize}}
-      </li>
-    </ul>
+    <Main />
   </div>
 </template>
 
 <script>
-
+import Main from '@/components/Main'
 export default {
   name: 'app',
-  watch: {
-    todos (oldVal, newVal) {
-      console.log(oldVal, newVal)
-    } 
-  },
-  data() {
-    return {
-      todos:[
-        {
-            "text": "Learn Vue.js",
-            "completed": true,
-            "time": 1526710200
-        },
-        {
-            "text": "Learn VueX",
-            "completed": false,
-            "time": 1526710254
-        },
-        {
-            "text": "Learn Vue Router",
-            "completed": false,
-            "time": 1526710407
-        }
-      ]
-    }
+  components: {
+    Main
   }
 }
 </script>
-
-<style scoped>
-.red{
-  color: crimson;
-}
-.green {
-  color:darkgreen;
-}
-</style>
