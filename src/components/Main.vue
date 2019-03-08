@@ -1,18 +1,29 @@
 <template>
   <div id="app">
     <TodoList :todoItems="todosItem"></TodoList>
+    <InputItem @onSave="addTodoItem"></InputItem>
   </div>
 </template>
 
 <script>
 import TodoList from '@/components/TodoList'
+import InputItem from '@/components/InputItem'
 
 export default {
   name: 'main',
-  components: {TodoList},
+  components: {TodoList,InputItem},
   completed: {
     sortItem () {
       return this.todos.sort((a,b) => {b.time - a.time})
+    }
+  },
+  methods: {
+    addTodoItem (text) {
+        this.todosItem.push({
+            "text": text,
+            "completed": false,
+            "time": Date.now()
+        })
     }
   },
   data() {

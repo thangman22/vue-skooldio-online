@@ -1,7 +1,7 @@
 <template>
     <div>
         <input type="text" v-model="text"/>
-        <button>Save</button>
+        <button @click="save()">Save</button>
     </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
     data() {
         return {
             text: null
+        }
+    },
+    methods: {
+        save () {
+            this.$emit('onSave',this.text)
         }
     }
 }
