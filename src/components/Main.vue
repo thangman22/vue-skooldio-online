@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <Alert>
+        <h1>Alert</h1>
+    </Alert>
     <TodoList :todoItems="todosItem"></TodoList>
     <InputItem @onSave="addTodoItem"></InputItem>
   </div>
@@ -8,10 +11,11 @@
 <script>
 import TodoList from '@/components/TodoList'
 import InputItem from '@/components/InputItem'
+import Alert from '@/components/Alert'
 
 export default {
   name: 'main',
-  components: {TodoList,InputItem},
+  components: {TodoList,InputItem,Alert},
   completed: {
     sortItem () {
       return this.todos.sort((a,b) => {b.time - a.time})
