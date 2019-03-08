@@ -12,14 +12,10 @@
 
 export default {
   name: 'app',
-  mounted () {
-
-  },
-  updated () {
-
-  },
-  created () {
-
+  watch: {
+    todos (oldVal, newVal) {
+      console.log(oldVal, newVal)
+    } 
   },
   data() {
     return {
