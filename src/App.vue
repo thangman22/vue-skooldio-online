@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <ul>
-      <li v-for="todo in todos" :key="todo.time" v-html="todo.text">
+      <li v-for="todo in todos" :key="todo.time">
+        {{todo.text | capitalize}}
       </li>
     </ul>
   </div>
@@ -11,6 +12,11 @@
 
 export default {
   name: 'app',
+  filters: {
+    capitalize (val) {
+      return val.toUpperCase()
+    }
+  },
   data() {
     return {
       todos:[
@@ -25,7 +31,7 @@ export default {
             "time": 1526710254
         },
         {
-            "text": "<strong>Learn Vue Router</strong>",
+            "text": "Learn Vue Router",
             "completed": false,
             "time": 1526710407
         }
