@@ -3,7 +3,7 @@
     <ul>
       <li v-for="todo in todos" :key="todo.time">
         <div v-if="completed === false">{{todo.text | capitalize}}</div>
-        <div v-else>Completed {{todo.text | capitalize}}</div>
+        <div v-else><img :src="srcUrl">Completed {{todo.text | capitalize}}</div>
       </li>
     </ul>
   </div>
@@ -20,6 +20,7 @@ export default {
   },
   data() {
     return {
+      srcUrl: 'https://via.placeholder.com/20',
       todos:[
         {
             "text": "Learn Vue.js",
