@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <ul>
-      <li v-for="todo in todos" :key="todo.time">
-        <div v-if="completed === false">{{todo.text | capitalize}}</div>
-        <div v-else><img :src="srcUrl">Completed {{todo.text | capitalize}}</div>
+      <li v-for="todo in todos" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}" :style="{color:color}">
+        {{todo.text | capitalize}}
       </li>
     </ul>
   </div>
@@ -20,6 +19,7 @@ export default {
   },
   data() {
     return {
+      color:'red',
       srcUrl: 'https://via.placeholder.com/20',
       todos:[
         {
@@ -44,12 +44,10 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.red{
+  color: crimson;
+}
+.green {
+  color:darkgreen;
 }
 </style>
