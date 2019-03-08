@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ul>
-      <li v-for="todo in todos" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}" :style="{color:color}">
+      <li v-for="todo in sortItem" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}" :style="{color:color}">
         {{todo.text | capitalize}}
       </li>
       <button @click="save()">Save</button>
@@ -14,11 +14,13 @@
 export default {
   name: 'app',
   methods: {
-    save2 () {
-      this.save()
-    },
     save () {
       console.log('save')
+    }
+  },
+  completed: {
+    sortItem () {
+      return this.todos.sort((a,b) => {b.time - a.time})
     }
   },
   data() {
