@@ -14,20 +14,17 @@ export default {
         {
             "text": "Learn Vue.js",
             "completed": true,
-            "time": 1526710200,
-            "id": 1526710200
+            "time": 1526710200
         },
         {
             "text": "Learn VueX",
             "completed": false,
-            "time": 1526710254,
-            "id": 1526710254
+            "time": 1526710254
         },
         {
             "text": "<strong>Learn Vue Router</strong>",
             "completed": false,
-            "time": 1526710407,
-            "id": 1526710407
+            "time": 1526710407
         }
       ]
     }
