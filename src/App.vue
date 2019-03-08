@@ -2,7 +2,8 @@
   <div id="app">
     <ul>
       <li v-for="todo in todos" :key="todo.time">
-        {{todo.text | capitalize}}
+        <div v-if="completed === false">{{todo.text | capitalize}}</div>
+        <div v-else>Completed {{todo.text | capitalize}}</div>
       </li>
     </ul>
   </div>
