@@ -12,10 +12,12 @@
 import TodoList from '@/components/TodoList'
 import InputItem from '@/components/InputItem'
 import Alert from '@/components/Alert'
+import getDataMixins from '@/mixins/getDataMixins'
 
 export default {
   name: 'main',
   components: {TodoList,InputItem,Alert},
+  mixins: [getDataMixins],
   completed: {
     sortItem () {
       return this.todos.sort((a,b) => {b.time - a.time})
