@@ -1,6 +1,7 @@
 <template>
     <div class="alert">
-        <slot></slot>
+        <slot name="header"></slot>
+        <slot name="text"></slot>
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Alert>
-        <h1>Alert</h1>
+        <h1 slot="header">Alert</h1>
     </Alert>
     <TodoList :todoItems="todosItem"></TodoList>
     <InputItem @onSave="addTodoItem"></InputItem>
