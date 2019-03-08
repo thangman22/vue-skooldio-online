@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    
+    <ul>
+      <li v-for="todo in todos" :key="todo.time">
+        {{todo.text}}
+      </li>
+    </ul>
   </div>
 </template>
 
