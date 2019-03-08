@@ -4,6 +4,7 @@
       <li v-for="todo in todos" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}" :style="{color:color}">
         {{todo.text | capitalize}}
       </li>
+      <button @click="save()">Save</button>
     </ul>
   </div>
 </template>
@@ -12,15 +13,16 @@
 
 export default {
   name: 'app',
-  filters: {
-    capitalize (val) {
-      return val.toUpperCase()
+  methods: {
+    save2 () {
+      this.save()
+    },
+    save () {
+      console.log('save')
     }
   },
   data() {
     return {
-      color:'red',
-      srcUrl: 'https://via.placeholder.com/20',
       todos:[
         {
             "text": "Learn Vue.js",
@@ -43,7 +45,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .red{
   color: crimson;
 }
