@@ -10,7 +10,8 @@ export default {
     // props: ['todoItems']
     props: {
         todoItems: {
-            type: Array
+            type: Array,
+            default: [],
         }
     }
 }
