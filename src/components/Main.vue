@@ -1,21 +1,17 @@
 <template>
   <div id="app">
-    <Alert>
-        <h1 slot="header">Alert</h1>
-    </Alert>
     <TodoList :todoItems="todosItem"></TodoList>
-    <InputItem @onSave="addTodoItem"></InputItem>
+    <InputItem @on-save="addTodoItem"></InputItem>
   </div>
 </template>
 
 <script>
 import TodoList from '@/components/TodoList'
 import InputItem from '@/components/InputItem'
-import Alert from '@/components/Alert'
 
 export default {
   name: 'main',
-  components: {TodoList,InputItem,Alert},
+  components: {TodoList,InputItem},
   completed: {
     sortItem () {
       return this.todos.sort((a,b) => {b.time - a.time})

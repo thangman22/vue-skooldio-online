@@ -1,23 +1,16 @@
 <template>
     <ul>
-        <li v-for="todo in todoItems" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}">
+        <li v-for="todo in todoItems" :key="todo.time" :class="{red: !todo.completed,green: todo.completed}">{{todo.text}}</li>
     </ul>
 </template>
 
 <script>
 export default {
     name: 'TodoList',
-    // props: ['todoItems']
     props: {
         todoItems: {
-            type: String,
-            //default: [],
-            default: function (val) {
-                return '.' + val
-            },
-            validator: function (params) {
-                retunr ['a'].includes(params)
-            }
+            type: Array,
+            default: () => []
         }
     }
 }

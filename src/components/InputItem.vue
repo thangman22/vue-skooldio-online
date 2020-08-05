@@ -6,16 +6,18 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
     name: 'InputItem',
-    data() {
-        return {
-            text: null
+    setup(_, context) {
+        const text = ref(null)
+
+        const save = () => {
+            context.emit('on-save',text)
         }
-    },
-    methods: {
-        save () {
-            this.$emit('onSave',this.text)
+        
+        return {
+            text, save
         }
     }
 }
